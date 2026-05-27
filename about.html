@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>About me</title>
 
     <script>
   (function(d) {
@@ -28,102 +28,105 @@
     <header id="header">
       <nav class="header_nav">
         <ul>
-          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
-          <li class="header_nav_item"><a href="#works">WORKS</a></li>
-          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
+          <li><a href="#about-me"></a>ABOUT ME</li>
+          <li><a href="#works"></a>WORKS</li>
+          <li><a href="#contact"></a>CONTACT</li>
         </ul>
       </nav>
     </header>
 
-    <!-- MV -->
-    <section id="main-visual" class="wrapper">
-      <div class="moon">
-        <img src="./images/moon.png" alt="月の画像">
-      </div>
-
-      <h1 class="logo">
-        <img src="./images/logo.png" alt="なつきポートフォリオ">
-      </h1>
-
-      <div class="scroll-area">
-        <p class="scroll-text">Scroll</p>
-        <img src="./images/scroll_line.png" alt="スクロール" class="scroll-line">
-      </div>
-    </section>
-    
-    <!-- MV下 -->
-    <section id="mv-read" class="wrapper">
-      <p class="main-copy">Luna design</p>
-      <p class="sub-copy">満ちる想いに、静かに寄り添うデザインを。</p>
-    </section>
-
     <!-- アバウトミー -->
-    <section id="about-me" class="wrapper">
-      <div class="star-area">
-        <img src="./images/bg_star.png" alt="">
-      </div>
-      
-      <div class="about-container">
-        <p class="description-box">
+    <section id="my-profile" class="wrapper">
+      <div class="profile-top">
+        <img src="./images/myphoto.png" alt="プロフィール写真" class="myphoto">
+
+        <div class="profile-inner">
+          <h2 class="section-title">ABOUT ME</h2>
+          <p class="name">菜月 natsuki</p>
+          <img src="./images/name-line.png" alt="" class="name-line">
+          <p class="profile-text">1994年生まれ<br>夫、娘との3人家族</p>
+          <p class="like-title">好きなもの</p>
+          <p class="like-text">まぐろ(赤身)、辛いもの、レモンスカッシュ、<br>音楽を聴くこと、ライブに行くこと、廃墟、ネイル</p>
+        </div>
+      </div> 
+
+        <div class="description-box profile-description">
           <span class="corner-tl"><img src="./images/kako.png" alt=""></span>
           <span class="corner-tr"><img src="./images/kako.png" alt=""></span>
           <span class="corner-bl"><img src="./images/kako.png" alt=""></span>
           <span class="corner-br"><img src="./images/kako.png" alt=""></span>
       
-          自ら光を放つ太陽ではなく、その光を優しく受け止める月のように。<br><br>
-          あなたが抱く大切な「想い」を、デザインという形に変えて<br>陰からそっと照らし、見守り続けたい。<br><br>
-          あなたの想いが満ちるまで、どこまでも共に歩みます。
-        </p>
+          <p>普段はWEB制作会社でアシスタントとしてサポート業務をメインに勤務しています。<br>
+          日々業務に励む中で「いつか自分もゼロから形にしてみたい」という思いが膨らみ、オンラインスクールで一からデザインとコーディングを学びました。</p>
+          
+          <p>プライベートでは、少し個性的でゆっくり成長する娘と過ごす中で「目に見えない想いに寄り添うこと」の大切さを教えてもらいました。
+          この寄り添う視点を活かして、お客様の想いを汲み取り、使う方々の細かな変化や使いやすさにも配慮したデザインを形にすることが私の目標です。</p>
+          
+          <p class="text-highlight">このポートフォリオのコンセプトである「月」のように<br>
+          静かでも確かな光で、誰かの進む道を照らせるようなデザインを届けたい。</p>
+          
+          <p>デザイナーとしてはまだスキルアップの途中ではありますが、
+          お客様の想いが最も輝く形を一緒に見つけ出し、使う人の心にも寄り添える、そんなデザイナーを目指しています。</p>
+        </div>
+    </section>
 
-        <div class="about-btn-area">
-          <a href="./about.html" class="c-btn btn-about">ABOUT ME<span class="arrows-line"></span></a>
+    <!-- 間のキラキラ装飾 -->
+    <div class="about-star-area">
+        <img src="./images/bg_star.png" alt="" class="star-area">
+    </div>
+
+    <!-- スキル -->
+    <section id="skill" class="wrapper">
+      <h2 class="section-title">SKILL</h2>
+
+      <div class="skill-inner">
+        <div class="design">
+          <div class="skill-container">
+            <img src="./images/skill_frame.png" alt="" class="skill-frame">
+            <p class="skill-title">Design</p>
+          </div>
+        
+      
+          <ul class="skill-list design-list">
+            <li class="skill-item">
+             <p class="skill-name">photoshop</p>
+            </li>
+
+            <li class="skill-item">
+             <p class="skill-name">Illustrator</p>
+            </li>
+
+            <li class="skill-item">
+             <p class="skill-name">Figma</p>
+            </li>
+          </ul>
+        </div>
+
+      <img src="./images/skill-deco.png" alt="" class="skill-deco">
+
+        <div class="coding">
+          <div class="skill-container">
+            <img src="./images/skill_frame.png" alt="" class="skill-frame">
+            <p class="skill-title">Coding</p>
+          </div>
+
+          <ul class="skill-list coding-list">
+            <li class="skill-item">
+             <p class="skill-name">HTML</p>
+            </li>
+
+            <li class="skill-item">
+             <p class="skill-name">CSS</p>
+            </li>
+
+            <li class="skill-item">
+             <p class="skill-name">JavaScript</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
-
-    <!-- ワークス -->
-    <section id="works" class="wrapper">
-      <h2 class="section-title">WORKS</h2>
-      <ul class="works-list">
-        <li data-aos="fade-up" data-aos-duration="1200">
-          <div class="works-item">
-           <a href="">
-            <img src="./images/top_works_hair.jpg" alt="ライフデザイン美容室" class="works-img">
-
-            <div class="works-info">
-              <p class="works-title">HP design</p>
-              <img src="./images/top_works_line.png" alt="詳細を見る" class="works-line">
-            </div>
-           </a>
-          </div>
-        </li>
-      
-        <li data-aos="fade-up" data-aos-duration="1200">
-          <div class="works-item">
-           <a href="">
-            <img src="./images/top_works_cafe.jpg" alt="デザインカフェ" class="works-img">
-
-            <div class="works-info">
-              <p class="works-title">Coding</p>
-              <img src="./images/top_works_line.png" alt="詳細を見る" class="works-line">
-            </div>
-           </a>
-          </div>
-        </li>
-      </ul>
-      
-      <div class="works-container">
-        <div class="star-area">
-          <img src="./images/bg_star.png" alt="">
-        </div>
-      
-
-        <div class="works-btn-area">
-          <a href="./works.html" class="c-btn btn-works">VIEW MORE<span class="arrows-line"></span></a>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- コンタクト -->
     <section id="contact" class="wrapper">
       <h2 class="section-title">CONTACT</h2>

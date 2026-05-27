@@ -1,19 +1,26 @@
 @charset "utf-8";
 
 body {
-    font-family: zen-kaku-gothic-new-black, sans-serif;
-    font-weight: 300;
-    font-style: normal;
+    font-family: zen-kaku-gothic-new, sans-serif;
+font-weight: 500;
+font-style: normal;
+
 
     background-image: url("../images/bg.jpg");
     background-repeat: repeat;
 
 }
 
+
 .header_nav li,
-.about-btn-area, .works-btn-area,
+.about-btn-area, .works-btn-area, .contact-btn-area,
 .section-title,
-.c-form__label {
+.c-form__label,
+.footer_nav li,
+.skill-title,
+.p-works .works-link::after,
+.p-works .sort-btn,
+.p-works-ice .back-text {
     font-family: arno-pro-display, serif;
     font-weight: 400;
     font-style: normal;
@@ -22,11 +29,16 @@ body {
     
 }
 
+
 .header_nav li, 
 .sub-copy,
-.section-title {
+.section-title,
+.footer_nav li,
+.text-highlight,
+.p-works .works-link::after {
     color: #f9d686;
 }
+
 
 .about-btn-area, .works-btn-area {
     font-size: 18px;
@@ -34,27 +46,28 @@ body {
 }
 
 
-
 .section-title {
     text-align: center;
     margin: 0 auto 70px;
 }
 
-.wrapper {
-    margin: 0 auto 170px;
-}
 
+.wrapper {
+    margin: 0 auto 200px;
+}
 
 
 .description-box,
 .works-title,
-.c-form__label {
+.c-form__label,
+.skill-title,
+.skill-name  {
     font-size: 16px;
 }
 
 
 
-
+/* ヘッダー */
 #header {
     display: flex;
     justify-content: flex-end;
@@ -68,33 +81,70 @@ body {
     gap: 48px;
 }
 
+.header_nav ul .header_nav_item {
+    position: relative;
+    padding-left: 24px; 
+    display: inline-block; 
+}
 
 
+.header_nav ul .header_nav_item::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 0;
+    transform: translateY(-50%);
 
+        width: 16px;
+        height: 16px;
+        background-image: url("../images/nav-icon.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        
+        transform-origin: center;
+    transition: transform 0.2s ease; /* transition: scale から変更 */
+    transform: translateY(-50%) scale(0); /* scale: 0 から変更 */
+}
+
+
+.header_nav ul .header_nav_item:hover::before {
+     transform: translateY(-50%) scale(1); 
+}
+
+
+/* MV */
 #main-visual {
+    height: 810px;
     position: relative;
 }
 
 .moon {
-    max-width: 100%;
+    max-width: 850px;
     height: auto;
     display: block;
+    position: fixed;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -2;
 }
 
-
-
 .logo {
+    max-width: 400px;
     position: absolute; /* 親（.main-visual）を基準に浮かせる */
-    top: 50%;
+    top: 40%;
     left: 40%;
     transform: translate(-50%, -50%); /* 真ん中ぴったりに配置 */
 }
 
 
+/* スクロール */
 .scroll-area {
     position: absolute;
-    right: 20%;
+    right: 10%;
     display: flex;
+    bottom: 0;
     flex-direction: column;
     align-items: center;
 }
@@ -131,13 +181,12 @@ body {
 }
 
 
+
+/* MV下 */
 #mv-read {
     display: inline-block;
     padding-left: 15%;
 }
-
-
-
 
 .main-copy {
     font-family: adobe-caslon-pro, serif;
@@ -155,38 +204,12 @@ body {
 }
 
 
-
-
-#about-me {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 50px;
-
-}
-
-.star-area {
-    max-width: 450px;
-}
-
-
-
-
-.about-container {
-    display: inline-block;
-    text-align: left;
-    padding-left: 40px;
-    
-}
-
+/* 「」がついた文章ボックス */
 .description-box {
     position: relative;
-    line-height: 170%;
+    line-height: 1.7;
     padding: 60px;
 }
-
-
-
 
 .description-box span {
     position: absolute;
@@ -200,12 +223,31 @@ body {
 
 
 
+/* トップページ--アバウト */
+#about-me {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 50px;
 
+}
+
+.star-area {
+    max-width: 450px;
+    width: 35%;
+}
+
+.about-container {
+    display: inline-block;
+    text-align: left;
+    padding-left: 40px;
+}
 
 .btn-about {
     margin-top: 65px;
 }
 
+/* 白枠矢印ボタン */
 .c-btn {
     display: inline-block;
     max-width: 280px;
@@ -235,29 +277,47 @@ body {
     pointer-events: none; /* マウス操作を邪魔しない */
 }
 
-.c-btn::after {
-    content: "";
+.arrows-line {
     position: absolute;
+    height: 1px;
+    background-color: #fff;
     width: 35px;
-    height: 15px;
-    top: 43%;
-    right: 20px;
+    top: 51%;
     transform: translateY(-50%);
-    background: url("../images/btn_arrow.png") no-repeat center / contain;
-    pointer-events: none; /* マウス操作を邪魔しない */
-    
-}
-
-/* ホバーした時に「ぴょん」と動かす */
-.c-btn:hover::after {
-    right: 15px; /* マウスを乗せると矢印が少し右に動く */
+    pointer-events: none;
+    right: 20px;
     transition: 0.3s;
 }
 
+.arrows-line::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #fff;
+    width: 15px;
+    top: -5px;
+    transform: rotate(35deg);
+    pointer-events: none;
+    right: 0;
+}
+
+/* ホバーした時に「ぴょん」と動かす */
+.c-btn:hover .arrows-line {
+    right: -30px; /* マウスを乗せると矢印が少し右に動く */
+    transition: 0.3s;
+    width: 85px;
+}
+
 @keyframes arrow-jump {
-    0% { transform: translateY(-50%) rotate(45deg) translateX(0); }
-    50% { transform: translateY(-50%) rotate(45deg) translateX(8px); }
-    100% { transform: translateY(-50%) rotate(45deg) translateX(0); }
+    0% { 
+        transform: translateY(-50%) rotate(45deg) translateX(0); 
+    }
+    50% { 
+        transform: translateY(-50%) rotate(45deg) translateX(8px); 
+    }
+    100% { 
+        transform: translateY(-50%) rotate(45deg) translateX(0); 
+    }
 }
 
 .section-title {
@@ -269,6 +329,29 @@ body {
     padding: 40px 0;
 }
 
+
+
+/* トップページ--ワークス */
+#works {
+    position: relative;
+    padding-bottom: 200px; 
+}
+
+.works-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.works-container .star-area {
+    position: absolute;
+    max-width: 450px;
+    width: 40%;
+    aspect-ratio: 75 / 83;
+    left: -5%;
+    bottom: -200px;
+    
+}
 
 .works-list {
     max-width: 1100px;    
@@ -290,24 +373,15 @@ body {
     margin-top: 110px;
 }
 
-
 .works-item {
     position: relative;
     width: 500px;
-
-
 }
-
-
-
 
 .works-item a {
     display: block;
     width: 100%;
 }
-
-
-
 
 .works-img  {
     width: 500px;
@@ -320,7 +394,6 @@ body {
 .works-list li:hover .works-img {
     opacity: 1;
 }
-
 
 .works-info {
     position: absolute;
@@ -336,7 +409,6 @@ body {
     transition: transform 0.4s ease;
 }
 
-
 .works-item:hover .works-info {
     transform: translateY(-50px);
 }
@@ -349,18 +421,18 @@ body {
     width: 300px;
 }
 
-
-
 .works-btn-area {
-    margin-top: 70px;
+    margin-top: 80px;
+    text-align: right;
+    padding-right: 8%;
 }
 
 
 
-/* コンタクト */
+/* トップページ--コンタクト */
 .contact-comment {
     font-size: 18px;
-    line-height: 170%;
+    line-height: 1.7;
 }
 
 #contact {
@@ -369,12 +441,10 @@ body {
     text-align: center;
 }
 
-
 form {
     padding: 60px 10px;
     max-width: 700px;
     margin: 0 auto;
-
 }
 
 .c-form__item {
@@ -388,7 +458,6 @@ form {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .c-form__item input {
     display: block;
@@ -425,26 +494,23 @@ form {
     color: #000000 !important;
 }
 
-
-
-
 .c-form__label {
     display: block;
     position: relative;
-    width: 80%;
+    width: 75%;
     margin-bottom: 10px;
     text-align: left;
-    text-indent: 20px;
+    padding-left: 1.5em;
 }
 
 .c-form__label::before {
     content: "";
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 1em;
+    height: 1em;
     background: url("../images/text_deco.png") no-repeat center / contain;
     left: 0; 
-    top: -1px;
+    bottom: 0.1em;
 }
 
 .btn-submit {
@@ -463,10 +529,499 @@ form {
 
 
 
+/* フッター */
+#footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+    margin-top: 100px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    position: absolute;
+
+}
+
+.footer_logo {
+    max-width: 250px;
+    width: 100%;
+}
+
+.footer_nav ul {
+    display: flex;
+    gap: 48px;
+}
+
+
+
+/* 下層ページ--アバウト */
+#my-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+.profile-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 50px;
+}
+
+.myphoto {
+    width: 350px;
+}
+
+.profile-inner {
+    max-width: 400px;
+    text-align: center;
+}
+
+.name,
+.like-title,
+.profile-text {
+    padding: 15px;
+}
+
+.name,
+.like-title {
+    font-size: 20px;
+}
+
+.name-line {
+    width: 200px;
+}
+
+.profile-text,
+.like-text {
+    font-size: 16px;
+}
+
+.profile-text {
+    line-height: 1.7;
+}
+
+.like-text {
+    line-height: 1.5;
+}
+
+.like-title {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    justify-content: center;
+}
+
+.like-title::before,
+.like-title::after {
+    content: "";
+    display: inline-block;
+    width: 15px; 
+    height: 15px;
+    background-image: url('../images/kirakira.png');
+    background-size: contain;
+}
+
+.profile-description {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.profile-description p {
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+
+
+/* アバウトミーとスキルの間の星 */
+.about-star-area {
+    padding-left :120px;
+    padding-bottom: 120px;
+
+}
+
+
+
+/* 下層ページ--スキル */
+.skill-inner {
+    display: flex;
+    justify-content: center; /* 3つの塊を画面中央に寄せる */
+    align-items: flex-start; /* 縦のラインを上揃えにする */
+    gap: 80px;               /* 塊同士（Design ⇄ 装飾 ⇄ Coding）の間のすき間 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-container {
+    position: relative;
+    width: 320px;
+    height: 80px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.skill-title {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 24px 40px;
+    width: 100%;
+}
+
+.design-list {
+    max-width: 260px; 
+}
+
+.coding-list {
+    max-width: 180px;
+}
+
+.skill-name {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.skill-name::before {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: url(../images/kirakira.png) no-repeat center / contain;
+    left: 0;
+    top: 0.1em;
+}
+
+.skill-deco {
+    max-width: 120px;
+    margin-top: 110px;
+    
+}
+
+.design, .coding {
+    display: flex;
+    flex-direction: column; /* リボンとリストを上下（縦）に並べる */
+    align-items: center;    /* ★リストの塊をリボンの「縦中央」に揃える */
+}
+
+
+
+/* 下層ページ--ワークス */
+/* ソートボタン */
+.p-works .works-btn {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.p-works .sort-btn::before,
+.p-works .sort-btn .arrows-line {
+    display: none !important;
+}
+
+.p-works .sort-btn {
+    cursor:pointer;
+    width: 200px;
+    background: transparent;
+    color: #fff;
+}
+
+.p-works .sort-btn:hover,
+.p-works .sort-btn.active {
+    background-color: #000000;
+    color: #f9d686;
+}
+
+/* ワークスリスト */
+.p-works #works-list {
+    max-width: 1100px;
+}
+
+.p-works #works-list li {
+    width: 26%;
+    margin-top: 100px;
+
+    opacity: 1;
+    transform: scale(1);
+}
+
+.p-works .works-list-category {
+    display: flex;
+    justify-content: center;
+    gap: 0 9%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.p-works .works-list-item {
+    position: relative;
+    padding-left: 1.5em;
+    font-size: 16px;
+
+    padding-top: 15px;
+}
+
+.p-works .works-list-item::before {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: url(../images/kirakira.png) no-repeat center / contain;
+    left: 0;
+    bottom: -0.05em;
+}
+
+
+/* ワークス-アイテム＿ホバーアクション */
+.p-works .works-link,
+.p-works .works-link::before,
+.p-works .works-link::after {
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.p-works .works-link {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block; /* 画像と同じサイズにするため */
+  width: 100%;           /* 親要素（li）の幅に合わせる */
+}
+
+.p-works .works-link::before,
+.p-works .works-link::after {
+  display: block;
+  opacity: 0;
+  position: absolute;
+}
+
+.p-works .works-link::before {
+  background: rgba(0, 0, 0, 0.5); /* ★背景画像を引き継ぐ代わりに、写真が見えやすいように半透明の黒を敷きます */
+  backdrop-filter: blur(3px);    /* ★写真自体を綺麗にぼかす最新のCSSプロパティ */
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;                     /* 画像の上、文字の下に配置 */
+  transition-duration: 0.4s;
+}
+
+.p-works .works-link::after {
+  content: "VIEW MORE";
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;                     /* 一番手前に表示 */
+  transition-duration: 0.2s;
+}
+
+.p-works .works-link:hover::before,
+.p-works .works-link:hover::after {
+  opacity: 1;
+}
+
+.p-works .works-link:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* 下層ページ--ワークス--アイスクリーム */
+.p-works-ice #works-main,
+.p-works-ice #works-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-works-ice #works-main {
+    margin: 0 auto 70px;
+}
+
+.p-works-ice .section-title {
+    margin-top: 100px;
+}
+
+.p-works-ice .works {
+    max-width: 1100px;
+}
+
+.p-works-ice .works-detail-img {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.p-works-ice .banner-ice {
+   max-width: 35%;
+}
+
+.p-works-ice .works-info-description {
+    max-width: 680px;
+}
+
+.p-works-ice .works-detail-title {
+    position: relative;
+    padding-left: 1.5em;
+    font-size: 18px;
+
+    padding-bottom: 15px;
+}
+
+.p-works-ice .works-detail-title::before {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: url(../images/kirakira.png) no-repeat center / contain;
+    left: 0;
+
+    top: 0.4em;
+}
+
+.p-works-ice .works-info-description table,
+.p-works-ice .works-info-description table + p {
+    padding-left: 1.5em;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.p-works-ice .works-info-description p {
+    line-height: 1.7;
+}
+
+.p-works-ice th,
+.p-works-ice td {
+    padding-bottom: 15px;
+}
+.p-works-ice th {
+    width: 120px;
+}
+
+/* 下層ページ--ワークス--アイスクリーム--コンタクト */
+.p-works-ice .contact-line {
+    width: 20px;
+    height: 300px;
+    background: url(../images/contact-line.png) no-repeat center / contain;
+}
+
+.p-works-ice .contact-container {
+    width: 700px;
+    height: 700px;
+    background: url(../images/contact-bg.png) no-repeat center / contain;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -120px;
+    right: 20px;
+    z-index: 1;
+}
+
+.p-works-ice .contact-message {
+    margin-bottom: 40px; 
+    font-size: 18px;
+}
+
+.p-works-ice .contact-btn-area {
+    width: 280px;  /* .c-btn の max-width と同じサイズにする */
+    height: 50px;
+    display: block;
+}
+
+/* 下層ページ--ワークス--アイスクリーム--戻るボタン */
+.p-works-ice .back-btn-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+
+.p-works-ice .back-to-works-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.p-works-ice .btn-moon {
+    display: block;
+    width: 45px;          /* ★画像の実際のサイズ（見栄え）に合わせて横幅を調整してください */
+    height: auto;         /* 縦横比を崩さない */
+    flex-shrink: 0; 
+}
+
+.p-works-ice .back-text {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    position: relative;
+    left: -15px;         /* 文字の左右位置をミリ単位で微調整 */
+}
+
+.p-works-ice .back-to-works-btn:hover {
+    transform: translateX(-4px); 
+    opacity: 0.8;
+}
 
 
 
 
+
+
+
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+
+.skill-inner {
+        flex-direction: column;
+        align-items: center;   
+        gap: 40px;              
+    }
+
+    .skill-deco {
+        display: block;         
+        margin: 10px 0;        
+    }
+
+    
+}
 
 
 

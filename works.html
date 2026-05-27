@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Works</title>
 
     <script>
   (function(d) {
@@ -23,105 +23,62 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<body>
+<body class="p-works">
     <!-- ヘッダー -->
     <header id="header">
       <nav class="header_nav">
         <ul>
-          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
-          <li class="header_nav_item"><a href="#works">WORKS</a></li>
-          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
+          <li><a href="#about-me"></a>ABOUT ME</li>
+          <li><a href="#works"></a>WORKS</li>
+          <li><a href="#contact"></a>CONTACT</li>
         </ul>
       </nav>
     </header>
 
-    <!-- MV -->
-    <section id="main-visual" class="wrapper">
-      <div class="moon">
-        <img src="./images/moon.png" alt="月の画像">
-      </div>
-
-      <h1 class="logo">
-        <img src="./images/logo.png" alt="なつきポートフォリオ">
-      </h1>
-
-      <div class="scroll-area">
-        <p class="scroll-text">Scroll</p>
-        <img src="./images/scroll_line.png" alt="スクロール" class="scroll-line">
-      </div>
-    </section>
-    
-    <!-- MV下 -->
-    <section id="mv-read" class="wrapper">
-      <p class="main-copy">Luna design</p>
-      <p class="sub-copy">満ちる想いに、静かに寄り添うデザインを。</p>
+    <!-- ソートボタン -->
+    <section class="works-btn">
+      <button class="c-btn sort-btn" data-name="all">ALL</button>
+      <button class="c-btn sort-btn" data-name="banner">Banner</button>
+      <button class="c-btn sort-btn" data-name="web">Web</button>
     </section>
 
-    <!-- アバウトミー -->
-    <section id="about-me" class="wrapper">
-      <div class="star-area">
-        <img src="./images/bg_star.png" alt="">
-      </div>
-      
-      <div class="about-container">
-        <p class="description-box">
-          <span class="corner-tl"><img src="./images/kako.png" alt=""></span>
-          <span class="corner-tr"><img src="./images/kako.png" alt=""></span>
-          <span class="corner-bl"><img src="./images/kako.png" alt=""></span>
-          <span class="corner-br"><img src="./images/kako.png" alt=""></span>
-      
-          自ら光を放つ太陽ではなく、その光を優しく受け止める月のように。<br><br>
-          あなたが抱く大切な「想い」を、デザインという形に変えて<br>陰からそっと照らし、見守り続けたい。<br><br>
-          あなたの想いが満ちるまで、どこまでも共に歩みます。
-        </p>
 
-        <div class="about-btn-area">
-          <a href="./about.html" class="c-btn btn-about">ABOUT ME<span class="arrows-line"></span></a>
-        </div>
-      </div>
-    </section>
+    <section id="works-list" class="wrapper">
+        <ul class="works-list-category">
+          <li data-category="banner">
+            <a href="" class="works-link">
+                <img src="./images/works_banner_ice.jpg" alt="アイスクリームのバナー" class="works-list-img">
+            </a>
+            <p class="works-list-item">Banner design</p>
+          </li>
 
-    <!-- ワークス -->
-    <section id="works" class="wrapper">
-      <h2 class="section-title">WORKS</h2>
-      <ul class="works-list">
-        <li data-aos="fade-up" data-aos-duration="1200">
-          <div class="works-item">
-           <a href="">
-            <img src="./images/top_works_hair.jpg" alt="ライフデザイン美容室" class="works-img">
+          <li data-category="banner">
+            <a href="" class="works-link">
+                <img src="./images/works_banner_hamburger.jpg" alt="ハンバーガーのバナー" class="works-list-img">
+            </a>
+            <p class="works-list-item">Banner design</p>
+          </li>
 
-            <div class="works-info">
-              <p class="works-title">HP design</p>
-              <img src="./images/top_works_line.png" alt="詳細を見る" class="works-line">
-            </div>
-           </a>
-          </div>
-        </li>
-      
-        <li data-aos="fade-up" data-aos-duration="1200">
-          <div class="works-item">
-           <a href="">
-            <img src="./images/top_works_cafe.jpg" alt="デザインカフェ" class="works-img">
+          <li data-category="web">
+            <a href="" class="works-link">
+                <img src="./images/works_web_lifehair.jpg" alt="美容室ライフヘアーデザインのHPデザイン" class="works-list-img">
+            </a>
+            <p class="works-list-item">HP design</p>
+          </li>
 
-            <div class="works-info">
-              <p class="works-title">Coding</p>
-              <img src="./images/top_works_line.png" alt="詳細を見る" class="works-line">
-            </div>
-           </a>
-          </div>
-        </li>
-      </ul>
-      
-      <div class="works-container">
-        <div class="star-area">
-          <img src="./images/bg_star.png" alt="">
-        </div>
-      
+          <li data-category="web">
+            <a href="" class="works-link">
+                <img src="./images/works_web_designcafe.jpg" alt="デザインカフェのコーディング" class="works-list-img">
+            </a>
+            <p class="works-list-item">Coding</p>
+          </li>
 
-        <div class="works-btn-area">
-          <a href="./works.html" class="c-btn btn-works">VIEW MORE<span class="arrows-line"></span></a>
-        </div>
-      </div>
+          <li data-category="all">
+            <img src="./images/works_comingsoon.jpg" alt="" class="works-list-img">
+            <p class="works-list-item">Coming soon</p>
+          </li>
+        </ul>
+
     </section>
 
     <!-- コンタクト -->
@@ -205,13 +162,7 @@
       
 
 
+    <script src="./js/works.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-    AOS.init();
-  </script>
-
-       
 </body>
 </html>
