@@ -28,32 +28,45 @@
     <header id="header">
       <nav class="header_nav">
         <ul>
-          <li><a href="#about-me"></a>ABOUT ME</li>
-          <li><a href="#works"></a>WORKS</li>
-          <li><a href="#contact"></a>CONTACT</li>
+          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+          <li class="header_nav_item"><a href="#works">WORKS</a></li>
+          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
+        </ul>
+      </nav>
+
+      <div class="sp_btn">
+        <span></span>
+        <p class="sp-btn-text">MENU</p>
+      </div>
+
+      <nav class="header_nav_sp">
+        <ul>
+          <li class="header_nav_item"><a href="./index.html">HOME</a></li>
+          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+          <li class="header_nav_item"><a href="#works">WORKS</a></li>
+          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
         </ul>
       </nav>
     </header>
 
     <!-- ソートボタン -->
-    <section class="works-btn">
+    <section class="works-sort-btn">
       <button class="c-btn sort-btn" data-name="all">ALL</button>
       <button class="c-btn sort-btn" data-name="banner">Banner</button>
       <button class="c-btn sort-btn" data-name="web">Web</button>
     </section>
 
-
     <section id="works-list" class="wrapper">
         <ul class="works-list-category">
           <li data-category="banner">
-            <a href="" class="works-link">
+            <a href="./works_ice.html" class="works-link">
                 <img src="./images/works_banner_ice.jpg" alt="アイスクリームのバナー" class="works-list-img">
             </a>
             <p class="works-list-item">Banner design</p>
           </li>
 
           <li data-category="banner">
-            <a href="" class="works-link">
+            <a href="./works_hamburger.html" class="works-link">
                 <img src="./images/works_banner_hamburger.jpg" alt="ハンバーガーのバナー" class="works-list-img">
             </a>
             <p class="works-list-item">Banner design</p>
@@ -78,7 +91,6 @@
             <p class="works-list-item">Coming soon</p>
           </li>
         </ul>
-
     </section>
 
     <!-- コンタクト -->
@@ -143,26 +155,32 @@
     <footer id="footer">
       <div class="footer-inner">
         <div class="footer_logo">
-          <img src="./images/logo.png" alt="なつきポートフォリオ">
+          <a href="./index.html">
+            <img src="./images/logo.png" alt="なつきポートフォリオ">
+          </a>
         </div>
 
         <nav class="footer_nav">
           <ul>
-            <li><a href="#about-me"></a>ABOUT ME</li>
-            <li><a href="#works"></a>WORKS</li>
-            <li><a href="#contact"></a>CONTACT</li>
+            <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+            <li class="header_nav_item"><a href="#works">WORKS</a></li>
+            <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
           </ul>
         </nav>
       </div>
       
       <picture class="footer_bg">
-        <img src="./images/bg_footer_pc.jpg" alt=""/>
+        <source
+           srcset="./images/bg_footer_sp.jpg"
+           media="(max-width:768px)"
+           />
+         <img src="./images/bg_footer_pc.jpg" alt=""/>
       </picture>
     </footer>
       
 
-
-    <script src="./js/works.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 </html>

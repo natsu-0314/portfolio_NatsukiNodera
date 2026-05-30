@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: zen-kaku-gothic-new, sans-serif;
 font-weight: 500;
@@ -12,7 +16,7 @@ font-style: normal;
 }
 
 
-.header_nav li,
+.header_nav li, .header_nav_sp li,
 .about-btn-area, .works-btn-area, .contact-btn-area,
 .section-title,
 .c-form__label,
@@ -20,7 +24,8 @@ font-style: normal;
 .skill-title,
 .p-works .works-link::after,
 .p-works .sort-btn,
-.p-works-ice .back-text {
+.p-works-ice .back-text,
+.sp-btn-text  {
     font-family: arno-pro-display, serif;
     font-weight: 400;
     font-style: normal;
@@ -30,7 +35,7 @@ font-style: normal;
 }
 
 
-.header_nav li, 
+.header_nav li, .header_nav_sp li,
 .sub-copy,
 .section-title,
 .footer_nav li,
@@ -46,14 +51,16 @@ font-style: normal;
 }
 
 
-.section-title {
-    text-align: center;
-    margin: 0 auto 70px;
+.wrapper {
+    margin: 0 auto 200px;
 }
 
 
-.wrapper {
-    margin: 0 auto 200px;
+#about-me,
+.works-container .star-area,
+#my-profile,
+#works-main {
+    padding: 0 15px;
 }
 
 
@@ -107,10 +114,156 @@ font-style: normal;
     transform: translateY(-50%) scale(0); /* scale: 0 から変更 */
 }
 
-
 .header_nav ul .header_nav_item:hover::before {
      transform: translateY(-50%) scale(1); 
 }
+
+.sp_btn,
+.header_nav_sp {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+
+/* ハンバーガーメニュー */
+.sp_btn {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 35px;
+    top: 30px;
+    background: url(../images/btn-moon.png) no-repeat center / contain;
+    z-index: 99999;
+}
+
+.sp-btn-text {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    position: absolute;
+    left: 30px;
+    top: 23px; 
+}
+
+.sp_btn.open {
+    background: none !important;
+}
+   
+.sp_btn.open .sp-btn-text {
+    display: none !important; 
+}
+
+.open::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.open::after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.header_nav {
+     display: none;
+}
+
+.header_nav_sp {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header_nav_sp ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+
+/* MV */
+.moon {
+    right: 0% !important;
+    top: 45%;
+}
+
+.logo {
+    top: 36%;
+    transform: translate(-32%, -50%);
+}
+
+/* ワークス星 */
+.works-container .star-area {
+    left: 0% !important;
+    bottom: -320px !important;
+}
+
+
+
+    
+/* アバウト */  
+.profile-top {
+    flex-direction: column;
+    gap: 40px;
+}
+
+.myphoto {
+    width: 80% !important;
+    max-width: 350px !important;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.profile-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.description-box {
+    padding: 45px 20px !important;
+    width: calc(100% - 40px) !important; /* 左右20pxずつ（計40px）引いたサイズに自動計算 */
+    margin-left: auto !important;         /* 画面の中央に寄せる */
+    margin-right: auto !important;
+}
+
+.description-box span[class^="corner-"] {
+    width: 30px !important; /* パソコンの50pxから、スマホ用に30pxへ縮める */
+    height: 30px !important;
+}
+
+.profile-box p {
+    padding-left: 0 !important;
+    margin-bottom: 20px;
+}
+
+.profile-box p:last-child {
+    margin-bottom: 0;
+}
+
+}
+
 
 
 /* MV */
@@ -228,8 +381,13 @@ font-style: normal;
    display: flex;
    align-items: center;
    justify-content: center;
-   gap: 50px;
+   gap: 20px;
 
+}
+
+.top-about-box .about-text {
+   line-height: 1.7 !important;
+   margin-bottom: 30px;
 }
 
 .star-area {
@@ -321,6 +479,8 @@ font-style: normal;
 }
 
 .section-title {
+    text-align: center;
+    margin: 0 auto 70px;
     font-size: 60px;
     letter-spacing: 0.1em;
 
@@ -346,9 +506,9 @@ font-style: normal;
 .works-container .star-area {
     position: absolute;
     max-width: 450px;
-    width: 40%;
+    width: 45%;
     aspect-ratio: 75 / 83;
-    left: -5%;
+    left: -15%;
     bottom: -200px;
     
 }
@@ -387,12 +547,14 @@ font-style: normal;
     width: 500px;
     height: auto;
     display: block;
-    opacity: 0.3;
+    filter: grayscale(60%) contrast(25%);
     transition: opacity 0.4s ease;
 }
 
-.works-list li:hover .works-img {
+.works-item:hover a,
+.works-item:hover .works-img {
     opacity: 1;
+    filter: none;
 }
 
 .works-info {
@@ -545,7 +707,6 @@ form {
     gap: 40px;
 
     position: absolute;
-
 }
 
 .footer_logo {
@@ -565,25 +726,28 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
-    
 }
 
 .profile-top {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 5%;
     padding-top: 50px;
+    padding-bottom: 75px;
 }
 
 .myphoto {
-    width: 350px;
+    width: 43%; 
+    max-width: 350px; 
+    height: auto; 
 }
 
 .profile-inner {
+    width: 55%;
     max-width: 400px;
     text-align: center;
+    
 }
 
 .name,
@@ -631,28 +795,17 @@ form {
     background-size: contain;
 }
 
-.profile-description {
+.profile-box {
     max-width: 1000px;
     width: 100%;
 }
 
-.profile-description p {
+.profile-box p {
     margin-bottom: 24px;
     line-height: 1.7;
 }
 
-
-
-/* アバウトミーとスキルの間の星 */
-.about-star-area {
-    padding-left :120px;
-    padding-bottom: 120px;
-
-}
-
-
-
-/* 下層ページ--スキル */
+/* スキル */
 .skill-inner {
     display: flex;
     justify-content: center; /* 3つの塊を画面中央に寄せる */
@@ -675,7 +828,7 @@ form {
 .skill-frame {
     position: absolute;
     width: 100%;
-    height: 100%;
+    max-width: 300px;
     z-index: 1;
 }
 
@@ -732,12 +885,13 @@ form {
 
 /* 下層ページ--ワークス */
 /* ソートボタン */
-.p-works .works-btn {
+.p-works .works-sort-btn {
     display: flex;
     justify-content: center;
     gap: 25px;
     margin-top: 50px;
     margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 .p-works .sort-btn::before,
@@ -859,49 +1013,33 @@ form {
 
 
 
-/* 下層ページ--ワークス--アイスクリーム */
-.p-works-ice #works-main,
-.p-works-ice #works-contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.p-works-ice #works-main {
-    margin: 0 auto 70px;
-}
-
-.p-works-ice .section-title {
+/* 下層ページ--ワークス共通 */
+.under-works-title {
     margin-top: 100px;
 }
 
-.p-works-ice .works {
-    max-width: 1100px;
+#works-main,
+#works-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 70px;
 }
 
-.p-works-ice .works-detail-img {
+.works-detail-img {
     width: 100%;
     text-align: center;
     margin-bottom: 90px;
 }
 
-.p-works-ice .banner-ice {
-   max-width: 35%;
-}
-
-.p-works-ice .works-info-description {
-    max-width: 680px;
-}
-
-.p-works-ice .works-detail-title {
+.works-detail-title {
     position: relative;
     padding-left: 1.5em;
     font-size: 18px;
-
     padding-bottom: 15px;
 }
 
-.p-works-ice .works-detail-title::before {
+.works-detail-title::before {
     content: "";
     position: absolute;
     width: 1em;
@@ -912,33 +1050,37 @@ form {
     top: 0.4em;
 }
 
-.p-works-ice .works-info-description table,
-.p-works-ice .works-info-description table + p {
-    padding-left: 1.5em;
-    padding-top: 20px;
-    padding-bottom: 10px;
+.works-info-description p:not(.works-detail-title) {
+    padding-left: 1em;   /* ★これでタイトル以外の2つの文章だけが1文字分空きます */
 }
 
-.p-works-ice .works-info-description p {
-    line-height: 1.7;
+.works-info-description table {
+    border-collapse: collapse; 
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.p-works-ice th,
-.p-works-ice td {
+th,
+td {
     padding-bottom: 15px;
 }
-.p-works-ice th {
+th {
     width: 120px;
 }
 
-/* 下層ページ--ワークス--アイスクリーム--コンタクト */
-.p-works-ice .contact-line {
+.works-info-description p {
+    line-height: 1.7;
+}
+
+
+/* コンタクト */
+.contact-line {
     width: 20px;
     height: 300px;
     background: url(../images/contact-line.png) no-repeat center / contain;
 }
 
-.p-works-ice .contact-container {
+.contact-container {
     width: 700px;
     height: 700px;
     background: url(../images/contact-bg.png) no-repeat center / contain;
@@ -953,26 +1095,27 @@ form {
     z-index: 1;
 }
 
-.p-works-ice .contact-message {
+.contact-message {
     margin-bottom: 40px; 
     font-size: 18px;
 }
 
-.p-works-ice .contact-btn-area {
+.contact-btn-area {
     width: 280px;  /* .c-btn の max-width と同じサイズにする */
     height: 50px;
     display: block;
 }
 
-/* 下層ページ--ワークス--アイスクリーム--戻るボタン */
-.p-works-ice .back-btn-area {
+
+/* 戻るボタン */
+.back-btn-area {
     width: 100%;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 150px;
 }
 
-.p-works-ice .back-to-works-btn {
+.back-to-works-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -980,47 +1123,273 @@ form {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.p-works-ice .btn-moon {
+.btn-moon {
     display: block;
     width: 45px;          /* ★画像の実際のサイズ（見栄え）に合わせて横幅を調整してください */
     height: auto;         /* 縦横比を崩さない */
     flex-shrink: 0; 
 }
 
-.p-works-ice .back-text {
+.back-text {
     font-size: 20px;
     letter-spacing: 0.1em;
     position: relative;
     left: -15px;         /* 文字の左右位置をミリ単位で微調整 */
 }
 
-.p-works-ice .back-to-works-btn:hover {
+.back-to-works-btn:hover {
     transform: translateX(-4px); 
     opacity: 0.8;
 }
 
 
+/* アイスクリーム */
+.p-works-ice .banner-ice {
+   max-width: 450px;
+   width: 100%;
+
+}
+
+.p-works-ice .ice-box {
+    max-width: 680px;
+    width: 100%;
+}
+
+.p-works-ice .works-info-description table {
+    margin-left: 1em !important;
+}
 
 
+/* ハンバーガー */
+.p-works-hamburger .banner-pop {
+   max-width: 400px;
+   width: 38%;
+}
 
+.p-works-hamburger .banner-luxury {
+   max-width: 400px;
+   max-width: 33%;
+}
+
+.p-works-hamburger .works-detail-img {
+    display: flex;
+    justify-content: center; /* ★中身のバナーを中央に寄せる */
+    align-items: center; 
+    gap: 5%;
+}
+
+.p-works-hamburger .hamburger-box {
+    max-width: 680px;
+    width: 100%;
+}
+
+.p-works-hamburger .humburger-memo {
+    text-align: center;
+    padding: 8px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.p-works-hamburger .works-info-description.hamburger-box table {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    margin-left: 1em;
+}
+
+.p-works-hamburger dl {
+    display: flex;
+    align-items: center;
+    padding-left: 1em; 
+    margin-top: 40px;
+}
+
+.p-works-hamburger dt {
+    width: 120px; 
+    flex-shrink: 0;
+}
+
+.p-works-hamburger dd {
+    margin-left: 0;
+}
+
+.p-works-hamburger dl dd p {
+    padding-left: 0 !important;
+    max-width: 490px;
+}
 
 
 
 /* レスポンシブ */
+
 @media screen and (max-width: 768px) {
 
+.wrapper {
+    margin: 0 auto 90px;
+}
+
+.section-title {
+    font-size: 45px;
+    margin: 0 auto 40px;
+
+    background: url("../images/bg_title.png") no-repeat center / contain;
+    background-size: 100px 100px;
+    padding: 40px 0;
+}
+
+
+/* MV */
+.moon {
+    right: -10%;
+    top: 45%;
+}
+
+.logo {
+    top: 36%;
+    transform: translate(-32%, -50%);
+}
+
+/* スクロール */
+.scroll-area {
+    top: 60%;
+}
+
+.scroll-text {
+    font-size: 20px;
+}
+
+/* MV下 */
+#mv-read {
+    padding-left: 5%;
+}
+
+.main-copy {
+    font-size: 100px;
+}
+
+.sub-copy {
+    font-size: 16px;
+}
+
+/* トップｰｰアバウト */
+#about-me {
+    flex-direction: column-reverse;
+    align-items: normal;
+}
+
+.star-area {
+    width: 40%;
+}
+
+.about-container {
+    padding-left: 0;
+}
+
+/* トップｰｰワークス */
+#works {
+    padding-bottom: 300px;
+}
+
+.works-btn-area {
+    text-align: center;
+    padding-right: 0;
+}
+
+.works-container .star-area {
+    left: 0%;
+    bottom: -300px;
+}
+
+.contact-comment {
+    font-size: 16px;
+}
+
+/* フッター */
+.footer-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px; 
+}
+
+.footer_logo {
+    max-width: 300px;
+    width: 95%;
+}
+
+.footer_nav ul {
+    flex-direction: column;
+    row-gap: 30px;
+    column-gap: 0;
+}
+
+
+/* スキル */
 .skill-inner {
-        flex-direction: column;
-        align-items: center;   
-        gap: 40px;              
-    }
+    flex-direction: column;
+    align-items: center;   
+    gap: 40px;              
+}
 
-    .skill-deco {
-        display: block;         
-        margin: 10px 0;        
-    }
+.skill-deco {
+    display: block;         
+    margin: 10px 0;        
+}
 
-    
+.skill-frame {
+    width: 90%;
+    max-width: 320px;
+}
+
+
+
+/* ワークス */
+.p-works .works-list-category {
+   flex-direction: column;
+   row-gap: 40px;
+   column-gap: 0;
+}
+
+.p-works #works-list li {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.contact-container {
+    width: 100% !important;
+    height: 470px;
+}
+
+.contact-line {
+    height: 200px;
+}
+
+
+
+/* ワークスｰｰハンバーガー */
+.p-works-hamburger .works-detail-img {
+    flex-direction: column;
+    row-gap: 45px;
+}
+
+.p-works-hamburger dl {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 15px;
+    column-gap: 0;
+}
+
+.p-works-hamburger .banner-pop {
+   width: 60%;
+}
+
+.p-works-hamburger .banner-luxury {
+   max-width: 70%;
+}
+
+
+
 }
 
 

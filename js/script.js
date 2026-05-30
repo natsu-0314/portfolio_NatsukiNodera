@@ -31,3 +31,14 @@ sortButtons.forEach(button => {
   });
 });
 
+
+
+
+ $(function(){
+    $(".sp_btn").on("click",function(){
+          $(".sp_btn").toggleClass("open");
+          $(".header_nav_sp").fadeToggle(600);
+        });    
+});
+
+

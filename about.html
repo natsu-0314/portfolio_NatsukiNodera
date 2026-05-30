@@ -28,12 +28,27 @@
     <header id="header">
       <nav class="header_nav">
         <ul>
-          <li><a href="#about-me"></a>ABOUT ME</li>
-          <li><a href="#works"></a>WORKS</li>
-          <li><a href="#contact"></a>CONTACT</li>
+          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+          <li class="header_nav_item"><a href="#works">WORKS</a></li>
+          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
+        </ul>
+      </nav>
+
+      <div class="sp_btn">
+        <span></span>
+        <p class="sp-btn-text">MENU</p>
+      </div>
+
+      <nav class="header_nav_sp">
+        <ul>
+          <li class="header_nav_item"><a href="./index.html">HOME</a></li>
+          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+          <li class="header_nav_item"><a href="#works">WORKS</a></li>
+          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
         </ul>
       </nav>
     </header>
+
 
     <!-- アバウトミー -->
     <section id="my-profile" class="wrapper">
@@ -50,7 +65,7 @@
         </div>
       </div> 
 
-        <div class="description-box profile-description">
+        <div class="description-box profile-box">
           <span class="corner-tl"><img src="./images/kako.png" alt=""></span>
           <span class="corner-tr"><img src="./images/kako.png" alt=""></span>
           <span class="corner-bl"><img src="./images/kako.png" alt=""></span>
@@ -69,11 +84,6 @@
           お客様の想いが最も輝く形を一緒に見つけ出し、使う人の心にも寄り添える、そんなデザイナーを目指しています。</p>
         </div>
     </section>
-
-    <!-- 間のキラキラ装飾 -->
-    <div class="about-star-area">
-        <img src="./images/bg_star.png" alt="" class="star-area">
-    </div>
 
     <!-- スキル -->
     <section id="skill" class="wrapper">
@@ -189,31 +199,33 @@
     <footer id="footer">
       <div class="footer-inner">
         <div class="footer_logo">
-          <img src="./images/logo.png" alt="なつきポートフォリオ">
+          <a href="./index.html">
+            <img src="./images/logo.png" alt="なつきポートフォリオ">
+          </a>
         </div>
 
         <nav class="footer_nav">
           <ul>
-            <li><a href="#about-me"></a>ABOUT ME</li>
-            <li><a href="#works"></a>WORKS</li>
-            <li><a href="#contact"></a>CONTACT</li>
+            <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+            <li class="header_nav_item"><a href="#works">WORKS</a></li>
+            <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
           </ul>
         </nav>
       </div>
       
       <picture class="footer_bg">
-        <img src="./images/bg_footer_pc.jpg" alt=""/>
+        <source
+           srcset="./images/bg_footer_sp.jpg"
+           media="(max-width:768px)"
+           />
+         <img src="./images/bg_footer_pc.jpg" alt=""/>
       </picture>
     </footer>
       
 
-
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <script>
-    AOS.init();
-  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
 
        
 </body>

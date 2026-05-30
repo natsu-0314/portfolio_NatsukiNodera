@@ -33,10 +33,24 @@
           <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
         </ul>
       </nav>
+
+      <div class="sp_btn">
+        <span></span>
+        <p class="sp-btn-text">MENU</p>
+      </div>
+
+      <nav class="header_nav_sp">
+        <ul>
+          <li class="header_nav_item"><a href="./index.html">HOME</a></li>
+          <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+          <li class="header_nav_item"><a href="#works">WORKS</a></li>
+          <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
+        </ul>
+      </nav>
     </header>
 
     <!-- MV -->
-    <section id="main-visual" class="wrapper">
+    <section id="main-visual">
       <div class="moon">
         <img src="./images/moon.png" alt="月の画像">
       </div>
@@ -53,7 +67,7 @@
     
     <!-- MV下 -->
     <section id="mv-read" class="wrapper">
-      <p class="main-copy">Luna design</p>
+      <p class="main-copy">LuRa design</p>
       <p class="sub-copy">満ちる想いに、静かに寄り添うデザインを。</p>
     </section>
 
@@ -64,16 +78,16 @@
       </div>
       
       <div class="about-container">
-        <p class="description-box">
+        <div class="description-box top-about-box">
           <span class="corner-tl"><img src="./images/kako.png" alt=""></span>
           <span class="corner-tr"><img src="./images/kako.png" alt=""></span>
           <span class="corner-bl"><img src="./images/kako.png" alt=""></span>
           <span class="corner-br"><img src="./images/kako.png" alt=""></span>
       
-          自ら光を放つ太陽ではなく、その光を優しく受け止める月のように。<br><br>
-          あなたが抱く大切な「想い」を、デザインという形に変えて<br>陰からそっと照らし、見守り続けたい。<br><br>
-          あなたの想いが満ちるまで、どこまでも共に歩みます。
-        </p>
+          <p class="about-text">自ら光を放つ太陽ではなく、その光を優しく受け止める月のように。</p>
+          <p class="about-text">あなたが抱く大切な「想い」を、デザインという形に変えて陰からそっと照らし、見守り続けたい。</p>
+          <p class="about-text">あなたの想いが満ちるまで、どこまでも共に歩みます。</p>
+        </div>
 
         <div class="about-btn-area">
           <a href="./about.html" class="c-btn btn-about">ABOUT ME<span class="arrows-line"></span></a>
@@ -127,7 +141,9 @@
     <!-- コンタクト -->
     <section id="contact" class="wrapper">
       <h2 class="section-title">CONTACT</h2>
-      <p class="contact-comment">当サイトをご覧いただきありがとうございます。<br>お気軽にお問い合わせください。</p>
+
+      <p class="contact-comment">当サイトをご覧いただきありがとうございます。</p>
+      <p class="contact-comment">お気軽にお問い合わせください。</p>
 
       <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf5HYOLo8u0c01s0q7PHunGBhW-nnpUuCGMOAdmLwKAOx8yHQ/formResponse" method="POST"
       class="c-form">
@@ -186,20 +202,26 @@
     <footer id="footer">
       <div class="footer-inner">
         <div class="footer_logo">
-          <img src="./images/logo.png" alt="なつきポートフォリオ">
+          <a href="./index.html">
+            <img src="./images/logo.png" alt="なつきポートフォリオ">
+          </a>
         </div>
 
         <nav class="footer_nav">
           <ul>
-            <li><a href="#about-me"></a>ABOUT ME</li>
-            <li><a href="#works"></a>WORKS</li>
-            <li><a href="#contact"></a>CONTACT</li>
+            <li class="header_nav_item"><a href="#about-me">ABOUT ME</a></li>
+            <li class="header_nav_item"><a href="#works">WORKS</a></li>
+            <li class="header_nav_item"><a href="#contact">CONTACT</a></li> 
           </ul>
         </nav>
       </div>
       
       <picture class="footer_bg">
-        <img src="./images/bg_footer_pc.jpg" alt=""/>
+        <source
+           srcset="./images/bg_footer_sp.jpg"
+           media="(max-width:768px)"
+           />
+         <img src="./images/bg_footer_pc.jpg" alt=""/>
       </picture>
     </footer>
       
@@ -207,10 +229,11 @@
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-    AOS.init();
-  </script>
+    <script>AOS.init();</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
+
 
        
 </body>
