@@ -124,7 +124,7 @@ font-style: normal;
 }
 
 
-
+/* レスポンシブ1100 */
 @media screen and (max-width: 1100px) {
 
 /* ハンバーガーメニュー */
@@ -349,7 +349,8 @@ font-style: normal;
     margin: 0 auto 10px;
 }
 
-.sub-copy {
+.sub-copy,
+.p-works-cafe .cafe-btn-area {
     font-family: zen-old-mincho, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -1023,7 +1024,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 70px;
+    margin: 0 auto 45px;
 }
 
 .works-detail-img {
@@ -1101,7 +1102,8 @@ th {
 }
 
 .contact-btn-area {
-    width: 280px;  /* .c-btn の max-width と同じサイズにする */
+    max-width: 280px;
+    width: 100%;  /* .c-btn の max-width と同じサイズにする */
     height: 50px;
     display: block;
 }
@@ -1147,7 +1149,6 @@ th {
 .p-works-ice .banner-ice {
    max-width: 450px;
    width: 100%;
-
 }
 
 .p-works-ice .ice-box {
@@ -1173,7 +1174,7 @@ th {
 
 .p-works-hamburger .works-detail-img {
     display: flex;
-    justify-content: center; /* ★中身のバナーを中央に寄せる */
+    justify-content: center; 
     align-items: center; 
     gap: 5%;
 }
@@ -1221,8 +1222,47 @@ th {
 }
 
 
+/* 美容室 */
+.p-works-hair .web-hair-mockup {
+    max-width: 640px;
+    width: 100%;
+}
 
-/* レスポンシブ */
+.p-works-hair .hair-box {
+    max-width: 680px;
+    width: 100%;
+}
+
+.p-works-hair .works-info-description table {
+    margin-left: 1em !important;
+}
+
+
+/* デザインカフェ */
+.p-works-cafe .web-cafe-mockup {
+    max-width: 640px;
+    width: 100%;
+}
+
+.p-works-cafe .works-info-description table {
+    margin-left: 1em !important;
+}
+
+.p-works-cafe .cafe-btn-area {
+    max-width: 280px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin-bottom: 55px;
+}
+
+.p-works-cafe .works-detail-img {
+    margin-bottom: 20px;
+}
+
+
+
+/* レスポンシブ768px */
 
 @media screen and (max-width: 768px) {
 
@@ -1367,7 +1407,7 @@ th {
 
 
 
-/* ワークスｰｰハンバーガー */
+/* ハンバーガー */
 .p-works-hamburger .works-detail-img {
     flex-direction: column;
     row-gap: 45px;

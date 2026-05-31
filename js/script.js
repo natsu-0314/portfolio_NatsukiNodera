@@ -39,6 +39,11 @@ sortButtons.forEach(button => {
           $(".sp_btn").toggleClass("open");
           $(".header_nav_sp").fadeToggle(600);
         });    
+    
+    $(".header_nav_sp a").on("click", function(){
+        $(".sp_btn").removeClass("open");     /* ✕ボタンをお月様に戻す */
+        $(".header_nav_sp").fadeOut(400);     /* 黒いナビ画面をふわっと消す（400ミリ秒） */
+    });
 });
 
 
